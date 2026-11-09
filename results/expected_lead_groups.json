@@ -1,0 +1,34 @@
+{
+  "lead_groups": {
+    "Inferior": [
+      "II",
+      "III",
+      "AVF"
+    ],
+    "Anterior": [
+      "V1",
+      "V2",
+      "V3",
+      "V4"
+    ],
+    "Lateral": [
+      "I",
+      "AVL",
+      "V5",
+      "V6"
+    ]
+  },
+  "expected": {
+    "Inferior MI": [
+      "Inferior"
+    ],
+    "Anterior MI": [
+      "Anterior"
+    ],
+    "Bundle branch block": [
+      "Anterior",
+      "Lateral"
+    ]
+  },
+  "written": "2026-11-09 15:25"
+}
