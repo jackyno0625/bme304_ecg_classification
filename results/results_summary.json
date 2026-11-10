@@ -1,0 +1,517 @@
+{
+  "methods_fill_ins": {
+    "signal_memory_gb": 1.03,
+    "n_12sl_features_total": 782,
+    "n_12sl_features_kept": 782,
+    "n_ecgs_without_12sl_row": 0,
+    "n_training_ecgs_complete_rows": 15524,
+    "features_per_lead": {
+      "V1": 64,
+      "I": 63,
+      "II": 63,
+      "V2": 63,
+      "V3": 63,
+      "V4": 63,
+      "V5": 63,
+      "V6": 63,
+      "III": 63,
+      "AVR": 63,
+      "AVL": 63,
+      "AVF": 63,
+      "GLOBAL": 25
+    },
+    "rf_selected_params": {
+      "NORM": {
+        "n_estimators": 500,
+        "max_depth": null,
+        "min_samples_leaf": 5,
+        "max_features": 0.3,
+        "val_auroc": 0.9472505396055055
+      },
+      "MI": {
+        "n_estimators": 200,
+        "max_depth": 20,
+        "min_samples_leaf": 1,
+        "max_features": "sqrt",
+        "val_auroc": 0.9392348138923481
+      },
+      "CD": {
+        "n_estimators": 200,
+        "max_depth": null,
+        "min_samples_leaf": 20,
+        "max_features": 0.3,
+        "val_auroc": 0.9381666452532595
+      }
+    },
+    "cnn_trainable_params": 190499,
+    "cnn_best_epochs": {
+      "42": 16,
+      "43": 12,
+      "44": 17
+    },
+    "device": "mps",
+    "machine": "macOS-10.16-x86_64-i386-64bit",
+    "versions": {
+      "python": "3.11.4",
+      "numpy": "1.26.4",
+      "pandas": "2.2.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.1",
+      "shap": "0.51.0",
+      "torch": "2.2.2",
+      "wfdb": "4.3.1",
+      "matplotlib": "3.11.2"
+    }
+  },
+  "table1": {
+    "Train (folds 1-8)": {
+      "All included ECGs": 17084,
+      "NORM": 7596,
+      "MI": 4379,
+      "  Inferior MI (IMI)": 2618,
+      "  Anterior MI (AMI)": 2466,
+      "  Both IMI and AMI": 793,
+      "CD": 3907,
+      "  Bundle branch block": 1815,
+      "STTC or HYP only (negative for all)": 2968
+    },
+    "Validation (fold 9)": {
+      "All included ECGs": 2146,
+      "NORM": 955,
+      "MI": 540,
+      "  Inferior MI (IMI)": 326,
+      "  Anterior MI (AMI)": 306,
+      "  Both IMI and AMI": 106,
+      "CD": 495,
+      "  Bundle branch block": 227,
+      "STTC or HYP only (negative for all)": 377
+    },
+    "Test (fold 10)": {
+      "All included ECGs": 2158,
+      "NORM": 963,
+      "MI": 550,
+      "  Inferior MI (IMI)": 327,
+      "  Anterior MI (AMI)": 306,
+      "  Both IMI and AMI": 96,
+      "CD": 496,
+      "  Bundle branch block": 228,
+      "STTC or HYP only (negative for all)": 371
+    },
+    "Total": {
+      "All included ECGs": 21388,
+      "NORM": 9514,
+      "MI": 5469,
+      "  Inferior MI (IMI)": 3271,
+      "  Anterior MI (AMI)": 3078,
+      "  Both IMI and AMI": 995,
+      "CD": 4898,
+      "  Bundle branch block": 2270,
+      "STTC or HYP only (negative for all)": 3716
+    }
+  },
+  "rf_missing_data_sensitivity": {
+    "val AUROC, median imputation": {
+      "NORM": 0.9473,
+      "MI": 0.9392,
+      "CD": 0.9382
+    },
+    "val AUROC, drop incomplete rows": {
+      "NORM": 0.9454,
+      "MI": 0.9356,
+      "CD": 0.9382
+    }
+  },
+  "rq1_table2": {
+    "NORM": {
+      "forest_auroc": 0.948,
+      "forest_ci_low": 0.9387,
+      "forest_ci_high": 0.9561,
+      "cnn_auroc": 0.9462,
+      "cnn_ci_low": 0.9367,
+      "cnn_ci_high": 0.9547,
+      "diff_cnn_minus_forest": -0.0018,
+      "diff_ci_low": -0.0077,
+      "diff_ci_high": 0.004,
+      "p_paired_bootstrap": 0.553,
+      "significant_bonferroni": false
+    },
+    "MI": {
+      "forest_auroc": 0.94,
+      "forest_ci_low": 0.9287,
+      "forest_ci_high": 0.9495,
+      "cnn_auroc": 0.9288,
+      "cnn_ci_low": 0.9163,
+      "cnn_ci_high": 0.9394,
+      "diff_cnn_minus_forest": -0.0112,
+      "diff_ci_low": -0.0198,
+      "diff_ci_high": -0.0032,
+      "p_paired_bootstrap": 0.005,
+      "significant_bonferroni": true
+    },
+    "CD": {
+      "forest_auroc": 0.9327,
+      "forest_ci_low": 0.9175,
+      "forest_ci_high": 0.9468,
+      "cnn_auroc": 0.921,
+      "cnn_ci_low": 0.9028,
+      "cnn_ci_high": 0.9368,
+      "diff_cnn_minus_forest": -0.0118,
+      "diff_ci_low": -0.0238,
+      "diff_ci_high": -0.0005,
+      "p_paired_bootstrap": 0.042,
+      "significant_bonferroni": false
+    },
+    "Macro": {
+      "forest_auroc": 0.9402,
+      "forest_ci_low": 0.9327,
+      "forest_ci_high": 0.947,
+      "cnn_auroc": 0.932,
+      "cnn_ci_low": 0.9231,
+      "cnn_ci_high": 0.9395,
+      "diff_cnn_minus_forest": -0.0083,
+      "diff_ci_low": -0.014,
+      "diff_ci_high": -0.0031,
+      "p_paired_bootstrap": 0.001,
+      "significant_bonferroni": true
+    }
+  },
+  "cnn_seed_stability": {
+    "NORM": {
+      "seed 42": 0.9462,
+      "seed 43": 0.9435,
+      "seed 44": 0.9476,
+      "mean": 0.9458,
+      "min": 0.9435,
+      "max": 0.9476
+    },
+    "MI": {
+      "seed 42": 0.9288,
+      "seed 43": 0.9224,
+      "seed 44": 0.9303,
+      "mean": 0.9271,
+      "min": 0.9224,
+      "max": 0.9303
+    },
+    "CD": {
+      "seed 42": 0.921,
+      "seed 43": 0.9225,
+      "seed 44": 0.9163,
+      "mean": 0.9199,
+      "min": 0.9163,
+      "max": 0.9225
+    },
+    "Macro": {
+      "seed 42": 0.932,
+      "seed 43": 0.9295,
+      "seed 44": 0.9314,
+      "mean": 0.9309,
+      "min": 0.9295,
+      "max": 0.932
+    }
+  },
+  "rq2_cnn_occlusion": [
+    {
+      "condition": "Inferior MI",
+      "group": "Inferior",
+      "intact_auroc": 0.9205,
+      "auroc_drop": 0.0908,
+      "ci_low": 0.0682,
+      "ci_high": 0.1161,
+      "expected": true
+    },
+    {
+      "condition": "Inferior MI",
+      "group": "Anterior",
+      "intact_auroc": 0.9205,
+      "auroc_drop": 0.2606,
+      "ci_low": 0.2214,
+      "ci_high": 0.3018,
+      "expected": false
+    },
+    {
+      "condition": "Inferior MI",
+      "group": "Lateral",
+      "intact_auroc": 0.9205,
+      "auroc_drop": 0.158,
+      "ci_low": 0.1232,
+      "ci_high": 0.1955,
+      "expected": false
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Inferior",
+      "intact_auroc": 0.9309,
+      "auroc_drop": 0.0007,
+      "ci_low": -0.0137,
+      "ci_high": 0.0152,
+      "expected": false
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Anterior",
+      "intact_auroc": 0.9309,
+      "auroc_drop": 0.3117,
+      "ci_low": 0.2689,
+      "ci_high": 0.3592,
+      "expected": true
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Lateral",
+      "intact_auroc": 0.9309,
+      "auroc_drop": 0.0522,
+      "ci_low": 0.0332,
+      "ci_high": 0.0733,
+      "expected": false
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Inferior",
+      "intact_auroc": 0.9656,
+      "auroc_drop": -0.018,
+      "ci_low": -0.0287,
+      "ci_high": -0.0088,
+      "expected": false
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Anterior",
+      "intact_auroc": 0.9656,
+      "auroc_drop": 0.2504,
+      "ci_low": 0.2126,
+      "ci_high": 0.2884,
+      "expected": true
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Lateral",
+      "intact_auroc": 0.9656,
+      "auroc_drop": 0.0061,
+      "ci_low": -0.0026,
+      "ci_high": 0.0162,
+      "expected": true
+    }
+  ],
+  "rq2_cnn_occlusion_paired": [
+    {
+      "condition": "Inferior MI",
+      "expected_group": "Inferior",
+      "other_group": "Anterior",
+      "drop_difference": -0.1698,
+      "ci_low": -0.2172,
+      "ci_high": -0.1216,
+      "p": 0.0
+    },
+    {
+      "condition": "Inferior MI",
+      "expected_group": "Inferior",
+      "other_group": "Lateral",
+      "drop_difference": -0.0672,
+      "ci_low": -0.1085,
+      "ci_high": -0.0274,
+      "p": 0.0
+    },
+    {
+      "condition": "Anterior MI",
+      "expected_group": "Anterior",
+      "other_group": "Inferior",
+      "drop_difference": 0.311,
+      "ci_low": 0.2643,
+      "ci_high": 0.3615,
+      "p": 0.0
+    },
+    {
+      "condition": "Anterior MI",
+      "expected_group": "Anterior",
+      "other_group": "Lateral",
+      "drop_difference": 0.2595,
+      "ci_low": 0.2119,
+      "ci_high": 0.309,
+      "p": 0.0
+    },
+    {
+      "condition": "Bundle branch block",
+      "expected_group": "Anterior",
+      "other_group": "Inferior",
+      "drop_difference": 0.2684,
+      "ci_low": 0.2259,
+      "ci_high": 0.3103,
+      "p": 0.0
+    },
+    {
+      "condition": "Bundle branch block",
+      "expected_group": "Lateral",
+      "other_group": "Inferior",
+      "drop_difference": 0.0241,
+      "ci_low": 0.0126,
+      "ci_high": 0.0363,
+      "p": 0.0
+    }
+  ],
+  "rq2_forest_shap": [
+    {
+      "condition": "Inferior MI",
+      "group": "Inferior",
+      "mean_abs_shap_sum": 0.406,
+      "share_of_anatomical": 0.5999,
+      "share_incl_global": 0.586,
+      "per_lead_importance": 0.1353,
+      "expected": true
+    },
+    {
+      "condition": "Inferior MI",
+      "group": "Anterior",
+      "mean_abs_shap_sum": 0.1495,
+      "share_of_anatomical": 0.2208,
+      "share_incl_global": 0.2157,
+      "per_lead_importance": 0.0374,
+      "expected": false
+    },
+    {
+      "condition": "Inferior MI",
+      "group": "Lateral",
+      "mean_abs_shap_sum": 0.1214,
+      "share_of_anatomical": 0.1793,
+      "share_incl_global": 0.1751,
+      "per_lead_importance": 0.0303,
+      "expected": false
+    },
+    {
+      "condition": "Inferior MI",
+      "group": "Global",
+      "mean_abs_shap_sum": 0.0161,
+      "share_of_anatomical": NaN,
+      "share_incl_global": 0.0232,
+      "per_lead_importance": NaN,
+      "expected": false
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Inferior",
+      "mean_abs_shap_sum": 0.1581,
+      "share_of_anatomical": 0.2316,
+      "share_incl_global": 0.2268,
+      "per_lead_importance": 0.0527,
+      "expected": false
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Anterior",
+      "mean_abs_shap_sum": 0.4015,
+      "share_of_anatomical": 0.588,
+      "share_incl_global": 0.5759,
+      "per_lead_importance": 0.1004,
+      "expected": true
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Lateral",
+      "mean_abs_shap_sum": 0.1232,
+      "share_of_anatomical": 0.1804,
+      "share_incl_global": 0.1767,
+      "per_lead_importance": 0.0308,
+      "expected": false
+    },
+    {
+      "condition": "Anterior MI",
+      "group": "Global",
+      "mean_abs_shap_sum": 0.0143,
+      "share_of_anatomical": NaN,
+      "share_incl_global": 0.0206,
+      "per_lead_importance": NaN,
+      "expected": false
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Inferior",
+      "mean_abs_shap_sum": 0.1234,
+      "share_of_anatomical": 0.2653,
+      "share_incl_global": 0.1849,
+      "per_lead_importance": 0.0411,
+      "expected": false
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Anterior",
+      "mean_abs_shap_sum": 0.2917,
+      "share_of_anatomical": 0.6269,
+      "share_incl_global": 0.4368,
+      "per_lead_importance": 0.0729,
+      "expected": true
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Lateral",
+      "mean_abs_shap_sum": 0.0501,
+      "share_of_anatomical": 0.1078,
+      "share_incl_global": 0.0751,
+      "per_lead_importance": 0.0125,
+      "expected": true
+    },
+    {
+      "condition": "Bundle branch block",
+      "group": "Global",
+      "mean_abs_shap_sum": 0.2025,
+      "share_of_anatomical": NaN,
+      "share_incl_global": 0.3033,
+      "per_lead_importance": NaN,
+      "expected": false
+    }
+  ],
+  "rq2_table3": [
+    {
+      "condition": "Inferior MI",
+      "model": "Random forest (SHAP share)",
+      "expected": "Inferior",
+      "ranking": "Inferior > Anterior > Lateral",
+      "top_group": "Inferior",
+      "consistent": true,
+      "bootstrap_fraction_expected_first": 1.0
+    },
+    {
+      "condition": "Inferior MI",
+      "model": "CNN (occlusion AUROC drop)",
+      "expected": "Inferior",
+      "ranking": "Anterior > Lateral > Inferior",
+      "top_group": "Anterior",
+      "consistent": false,
+      "bootstrap_fraction_expected_first": 0.0
+    },
+    {
+      "condition": "Anterior MI",
+      "model": "Random forest (SHAP share)",
+      "expected": "Anterior",
+      "ranking": "Anterior > Inferior > Lateral",
+      "top_group": "Anterior",
+      "consistent": true,
+      "bootstrap_fraction_expected_first": 1.0
+    },
+    {
+      "condition": "Anterior MI",
+      "model": "CNN (occlusion AUROC drop)",
+      "expected": "Anterior",
+      "ranking": "Anterior > Lateral > Inferior",
+      "top_group": "Anterior",
+      "consistent": true,
+      "bootstrap_fraction_expected_first": 1.0
+    },
+    {
+      "condition": "Bundle branch block",
+      "model": "Random forest (SHAP share)",
+      "expected": "Anterior or Lateral",
+      "ranking": "Anterior > Inferior > Lateral",
+      "top_group": "Anterior",
+      "consistent": true,
+      "bootstrap_fraction_expected_first": 1.0
+    },
+    {
+      "condition": "Bundle branch block",
+      "model": "CNN (occlusion AUROC drop)",
+      "expected": "Anterior or Lateral",
+      "ranking": "Anterior > Lateral > Inferior",
+      "top_group": "Anterior",
+      "consistent": true,
+      "bootstrap_fraction_expected_first": 1.0
+    }
+  ]
+}

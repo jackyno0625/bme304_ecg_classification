@@ -1,0 +1,4 @@
+class,"val AUROC, median imputation","val AUROC, drop incomplete rows"
+NORM,0.9473,0.9454
+MI,0.9392,0.9356
+CD,0.9382,0.9382

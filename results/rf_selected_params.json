@@ -1,0 +1,23 @@
+{
+  "NORM": {
+    "n_estimators": 500,
+    "max_depth": null,
+    "min_samples_leaf": 5,
+    "max_features": 0.3,
+    "val_auroc": 0.9472505396055055
+  },
+  "MI": {
+    "n_estimators": 200,
+    "max_depth": 20,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "val_auroc": 0.9392348138923481
+  },
+  "CD": {
+    "n_estimators": 200,
+    "max_depth": null,
+    "min_samples_leaf": 20,
+    "max_features": 0.3,
+    "val_auroc": 0.9381666452532595
+  }
+}

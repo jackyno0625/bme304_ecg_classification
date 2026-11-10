@@ -1,0 +1,7 @@
+condition,model,expected,ranking,top_group,consistent,bootstrap_fraction_expected_first
+Inferior MI,Random forest (SHAP share),Inferior,Inferior > Anterior > Lateral,Inferior,True,1.0
+Inferior MI,CNN (occlusion AUROC drop),Inferior,Anterior > Lateral > Inferior,Anterior,False,0.0
+Anterior MI,Random forest (SHAP share),Anterior,Anterior > Inferior > Lateral,Anterior,True,1.0
+Anterior MI,CNN (occlusion AUROC drop),Anterior,Anterior > Lateral > Inferior,Anterior,True,1.0
+Bundle branch block,Random forest (SHAP share),Anterior or Lateral,Anterior > Inferior > Lateral,Anterior,True,1.0
+Bundle branch block,CNN (occlusion AUROC drop),Anterior or Lateral,Anterior > Lateral > Inferior,Anterior,True,1.0

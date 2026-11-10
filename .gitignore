@@ -1,0 +1,13 @@
+# Data is downloaded by the notebook; too large for git
+data/
+
+# Trained model weights (recreated by the notebook)
+models/
+
+# Python environment and caches
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+
+# macOS
+.DS_Store

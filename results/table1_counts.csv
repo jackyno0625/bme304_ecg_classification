@@ -1,0 +1,10 @@
+,Train (folds 1-8),Validation (fold 9),Test (fold 10),Total
+All included ECGs,17084,2146,2158,21388
+NORM,7596,955,963,9514
+MI,4379,540,550,5469
+  Inferior MI (IMI),2618,326,327,3271
+  Anterior MI (AMI),2466,306,306,3078
+  Both IMI and AMI,793,106,96,995
+CD,3907,495,496,4898
+  Bundle branch block,1815,227,228,2270
+STTC or HYP only (negative for all),2968,377,371,3716
